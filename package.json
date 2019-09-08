@@ -1,6 +1,6 @@
 {
   "name": "@lemoncode/is-number-validator",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Micro library validator to check if the value is a number for form-validation",
   "main": "dist/@lemoncode/is-number-validator.cjs.js",
   "module": "dist/@lemoncode/is-number-validator.esm.js",
