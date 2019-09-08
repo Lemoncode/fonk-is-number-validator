@@ -210,4 +210,37 @@ describe('isNumber validator', () => {
       type: 'IS_NUMBER',
     });
   });
+
+  it('should overwrite default message when it feeds value and message', () => {
+    // Arrange
+    const value = '';
+    const message = 'other message';
+
+    // Act
+    const result = validator({ value, message });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: false,
+      message: 'other message',
+      type: 'IS_NUMBER',
+    });
+  });
+
+  it('should overwrite default message when it feeds value and calls to setErrorMessage', () => {
+    // Arrange
+    const value = '';
+
+    setErrorMessage('other message');
+
+    // Act
+    const result = validator({ value });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: false,
+      message: 'other message',
+      type: 'IS_NUMBER',
+    });
+  });
 });
