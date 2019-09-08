@@ -1,7 +1,7 @@
 {
   "name": "is-number-validator-ts-example",
   "version": "1.0.0",
-  "description": "isNumber validator, typescript example ",
+  "description": "is-number-validator, typescript example",
   "main": "index.html",
   "scripts": {
     "start": "parcel src/index.html --open"
