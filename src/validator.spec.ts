@@ -1,7 +1,7 @@
 import { validator, setErrorMessage } from './validator';
 
 describe('isNumber validator', () => {
-  it('should return failed validation when it feeds value equals undefined', () => {
+  it('should return succeeded validation when it feeds value equals undefined', () => {
     // Arrange
     const value = void 0;
 
@@ -10,13 +10,13 @@ describe('isNumber validator', () => {
 
     // Assert
     expect(result).toEqual({
-      succeeded: false,
-      message: 'Must be a number',
+      succeeded: true,
+      message: '',
       type: 'IS_NUMBER',
     });
   });
 
-  it('should return failed validation when it feeds value equals null', () => {
+  it('should return succeeded validation when it feeds value equals null', () => {
     // Arrange
     const value = null;
 
@@ -25,13 +25,13 @@ describe('isNumber validator', () => {
 
     // Assert
     expect(result).toEqual({
-      succeeded: false,
-      message: 'Must be a number',
+      succeeded: true,
+      message: '',
       type: 'IS_NUMBER',
     });
   });
 
-  it('should return failed validation when it feeds value equals empty string', () => {
+  it('should return succeeded validation when it feeds value equals empty string', () => {
     // Arrange
     const value = '';
 
@@ -40,8 +40,8 @@ describe('isNumber validator', () => {
 
     // Assert
     expect(result).toEqual({
-      succeeded: false,
-      message: 'Must be a number',
+      succeeded: true,
+      message: '',
       type: 'IS_NUMBER',
     });
   });
@@ -213,7 +213,7 @@ describe('isNumber validator', () => {
 
   it('should overwrite default message when it feeds value and message', () => {
     // Arrange
-    const value = '';
+    const value = 'test';
     const message = 'other message';
 
     // Act
@@ -229,7 +229,7 @@ describe('isNumber validator', () => {
 
   it('should overwrite default message when it feeds value and calls to setErrorMessage', () => {
     // Arrange
-    const value = '';
+    const value = 'test';
 
     setErrorMessage('other message');
 
