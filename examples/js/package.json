@@ -4,7 +4,7 @@
   "description": "fonk-is-number-validator, javascript example",
   "main": "index.html",
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "parcel index.html --open"
   },
   "dependencies": {
     "@lemoncode/fonk": "latest",
