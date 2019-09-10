@@ -22,10 +22,10 @@ const myFormValues = {
 We can add a isNumber validation to the myFormValues
 
 ```javascript
-import { isNumber } from "@lemoncode/fonk-is-number-validator";
+import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema = {
-  price: [isNumber.validator]
+  price: [isNumber.validator],
 };
 ```
 
@@ -34,23 +34,23 @@ You can customize the error message displayed in two ways:
 - Globally, replace the default error message in all validationSchemas (e.g. porting to spanish):
 
 ```javascript
-import { isNumber } from "@lemoncode/fonk-is-number-validator";
+import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
-isNumber.setErrorMessage("El campo debe de ser numérico");
+isNumber.setErrorMessage('El campo debe de ser numérico');
 ```
 
 - Locally just override the error message for this validationSchema:
 
 ```javascript
-import { isNumber } from "@lemoncode/fonk-is-number-validator";
+import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema = {
   price: [
     {
       validator: isNumber.validator,
-      message: "Error message only updated for the validation schema"
-    }
-  ]
+      message: 'Error message only updated for the validation schema',
+    },
+  ],
 };
 ```
 

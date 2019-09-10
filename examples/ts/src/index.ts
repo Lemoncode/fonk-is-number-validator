@@ -1,7 +1,4 @@
-import {
-  ValidationSchema,
-  createFormValidation,
-} from '@lemoncode/fonk';
+import { ValidationSchema, createFormValidation } from '@lemoncode/fonk';
 import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema: ValidationSchema = {
