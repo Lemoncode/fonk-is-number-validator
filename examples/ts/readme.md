@@ -1,8 +1,8 @@
-# is-number-validator example
+# fonk-is-number-validator example
 
-Example using `is-number-validator`.
+Example using `fonk-is-number-validator`.
 
-[![See is-number-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/is-number-validator/tree/master/examples/ts)
+[![See fonk-is-number-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/fonk-is-number-validator/tree/master/examples/ts)
 
 # About Basefactor + Lemoncode
 

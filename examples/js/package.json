@@ -1,14 +1,14 @@
 {
-  "name": "is-number-validator-js-example",
+  "name": "fonk-is-number-validator-js-example",
   "version": "1.0.0",
-  "description": "is-number-validator, javascript example",
+  "description": "fonk-is-number-validator, javascript example",
   "main": "index.html",
   "scripts": {
     "start": "parcel src/index.html --open"
   },
   "dependencies": {
-    "@lemoncode/form-validation": "latest",
-    "@lemoncode/is-number-validator": "latest"
+    "@lemoncode/fonk": "latest",
+    "@lemoncode/fonk-is-number-validator": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",

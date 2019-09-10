@@ -1,8 +1,8 @@
 # fonk-is-number-validator
 
-[![CircleCI](https://badgen.net/github/status/Lemoncode/is-number-validator/master/ci?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/is-number-validator/tree/master)
-[![NPM Version](https://badgen.net/npm/v/@lemoncode/is-number-validator?icon=npm&label=npm)](https://www.npmjs.com/package/@lemoncode/is-number-validator)
-[![bundle-size](https://badgen.net/bundlephobia/min/@lemoncode/is-number-validator)](https://bundlephobia.com/result?p=@lemoncode/is-number-validator)
+[![CircleCI](https://badgen.net/github/status/Lemoncode/fonk-is-number-validator/master/ci?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/fonk-is-number-validator/tree/master)
+[![NPM Version](https://badgen.net/npm/v/@lemoncode/fonk-is-number-validator?icon=npm&label=npm)](https://www.npmjs.com/package/@lemoncode/fonk-is-number-validator)
+[![bundle-size](https://badgen.net/bundlephobia/min/@lemoncode/fonk-is-number-validator)](https://bundlephobia.com/result?p=@lemoncode/fonk-is-number-validator)
 
 This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to:
 
@@ -22,7 +22,7 @@ const myFormValues = {
 We can add a isNumber validation to the myFormValues
 
 ```javascript
-import { isNumber } from "@lemoncode/is-number-validator";
+import { isNumber } from "@lemoncode/fonk-is-number-validator";
 
 const validationSchema = {
   price: [isNumber.validator]
@@ -34,7 +34,7 @@ You can customize the error message displayed in two ways:
 - Globally, replace the default error message in all validationSchemas (e.g. porting to spanish):
 
 ```javascript
-import { isNumber } from "@lemoncode/fonk/is-number-validator";
+import { isNumber } from "@lemoncode/fonk-is-number-validator";
 
 isNumber.setErrorMessage("El campo debe de ser numérico");
 ```
@@ -42,7 +42,7 @@ isNumber.setErrorMessage("El campo debe de ser numérico");
 - Locally just override the error message for this validationSchema:
 
 ```javascript
-import { isNumber } from "@lemoncode/fonk/is-number-validator";
+import { isNumber } from "@lemoncode/fonk-is-number-validator";
 
 const validationSchema = {
   price: [

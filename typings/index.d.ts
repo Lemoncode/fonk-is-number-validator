@@ -1,4 +1,4 @@
-import { FieldValidationFunctionSync } from '@lemoncode/form-validation';
+import { FieldValidationFunctionSync } from '@lemoncode/fonk';
 
 export namespace isNumber {
   export const validator: FieldValidationFunctionSync;

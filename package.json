@@ -1,9 +1,9 @@
 {
-  "name": "@lemoncode/is-number-validator",
+  "name": "@lemoncode/fonk-is-number-validator",
   "version": "0.0.0",
-  "description": "Micro library validator to check if the value is a number for form-validation",
-  "main": "dist/@lemoncode/is-number-validator.cjs.js",
-  "module": "dist/@lemoncode/is-number-validator.esm.js",
+  "description": "Micro library validator to check if the value is a number for fonk",
+  "main": "dist/@lemoncode/fonk-is-number-validator.cjs.js",
+  "module": "dist/@lemoncode/fonk-is-number-validator.esm.js",
   "typings": "typings/index.d.ts",
   "files": [
     "dist",
@@ -29,30 +29,30 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lemoncode/is-number-validator.git"
+    "url": "git+https://github.com/Lemoncode/fonk-is-number-validator.git"
   },
   "keywords": [
     "is number",
     "validator",
+    "fonk",
     "form validation",
-    "form-validation",
     "validate",
     "sync validation"
   ],
   "author": "Lemoncode",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lemoncode/is-number-validator/issues"
+    "url": "https://github.com/Lemoncode/fonk-is-number-validator/issues"
   },
-  "homepage": "https://github.com/Lemoncode/is-number-validator#readme",
+  "homepage": "https://github.com/Lemoncode/fonk-is-number-validator#readme",
   "peerDependencies": {
-    "@lemoncode/form-validation": "latest"
+    "@lemoncode/fonk": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@lemoncode/form-validation": "latest",
+    "@lemoncode/fonk": "latest",
     "@types/jest": "^24.0.18",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",

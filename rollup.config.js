@@ -24,7 +24,7 @@ export default builds.map(({ format, minify }) => {
       file: `dist/${pkg.name}.${format}${minExtension}.js`,
       format,
       globals: {
-        '@lemoncode/form-validation': 'FormValidation',
+        '@lemoncode/fonk': 'Fonk',
       }, // Necessary for externals libraries and umd format
     },
     external: Object.keys(pkg.peerDependencies || {}),
