@@ -20,7 +20,7 @@ const isDefined = value => value !== void 0 && value !== null && value !== '';
 const validateType = (value, args: CustomValidatorArgs) =>
   !args.strictTypes || typeof value === 'number';
 
-const validate = value => /^[+-]?\d+(\.\d+)?$/.test(value) && !isNaN(value);
+const validate = value => !isNaN(Number(value));
 
 export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
   const {
