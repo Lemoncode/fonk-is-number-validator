@@ -29,6 +29,26 @@ const validationSchema = {
 };
 ```
 
+You can specify the custom arguments in two ways:
+
+- Locally just customize the arguments for this validationSchema:
+
+```javascript
+import { isNumber } from '@lemoncode/fonk-is-number-validator';
+
+const validationSchema = {
+  price: [{ validator: isNumber.validator, customArgs: { strictTypes: true } }],
+};
+```
+
+- Globally, replace the default custom arguments in all validationSchemas (e.g. enable strict types):
+
+```javascript
+import { isNumber } from '@lemoncode/fonk-is-number-validator';
+
+isNumber.setCustomArgs({ strictTypes: true });
+```
+
 You can customize the error message displayed in two ways:
 
 - Globally, replace the default error message in all validationSchemas (e.g. porting to spanish):

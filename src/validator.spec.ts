@@ -1,4 +1,4 @@
-import { validator, setErrorMessage } from './validator';
+import { validator, setErrorMessage, setCustomArgs } from './validator';
 
 describe('isNumber validator', () => {
   it('should return succeeded validation when it feeds value equals undefined', () => {
@@ -211,6 +211,36 @@ describe('isNumber validator', () => {
     });
   });
 
+  it('should return succeeded validation when it feeds value is a string with a positive number', () => {
+    // Arrange
+    const value = '100';
+
+    // Act
+    const result = validator({ value, customArgs: { strict: false } });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: true,
+      message: '',
+      type: 'IS_NUMBER',
+    });
+  });
+
+  it('should return succeeded validation when it feeds value is a string with a negative number and strict mode is off', () => {
+    // Arrange
+    const value = '-20';
+
+    // Act
+    const result = validator({ value, customArgs: { strict: false } });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: true,
+      message: '',
+      type: 'IS_NUMBER',
+    });
+  });
+
   it('should overwrite default message when it feeds value and message', () => {
     // Arrange
     const value = 'test';
@@ -223,6 +253,23 @@ describe('isNumber validator', () => {
     expect(result).toEqual({
       succeeded: false,
       message: 'other message',
+      type: 'IS_NUMBER',
+    });
+  });
+
+  it('should overwrite default customArgs when it feeds value and calls to setCustomArgs', () => {
+    // Arrange
+    const value = '100';
+
+    setCustomArgs({ strictTypes: false });
+
+    // Act
+    const result = validator({ value });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: true,
+      message: '',
       type: 'IS_NUMBER',
     });
   });
