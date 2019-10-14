@@ -136,12 +136,27 @@ describe('isNumber validator', () => {
     });
   });
 
+  it('should return failed validation when it feeds value is not a number string', () => {
+    // Arrange
+    const value = '15.a';
+
+    // Act
+    const result = validator({ value });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: false,
+      message: 'Must be a number',
+      type: 'IS_NUMBER',
+    });
+  });
+
   it('should return failed validation when it feeds value equals array with values', () => {
     // Arrange
     const value = [1];
 
     // Act
-    const result = validator({ value });
+    const result = validator({ value, customArgs: { strictTypes: true } });
 
     // Assert
     expect(result).toEqual({
@@ -156,7 +171,7 @@ describe('isNumber validator', () => {
     const value = '1';
 
     // Act
-    const result = validator({ value });
+    const result = validator({ value, customArgs: { strictTypes: true } });
 
     // Assert
     expect(result).toEqual({
