@@ -231,7 +231,7 @@ describe('isNumber validator', () => {
     const value = '100';
 
     // Act
-    const result = validator({ value, customArgs: { strict: false } });
+    const result = validator({ value, customArgs: { strictTypes: false } });
 
     // Assert
     expect(result).toEqual({
@@ -246,7 +246,7 @@ describe('isNumber validator', () => {
     const value = '-20';
 
     // Act
-    const result = validator({ value, customArgs: { strict: false } });
+    const result = validator({ value, customArgs: { strictTypes: false } });
 
     // Assert
     expect(result).toEqual({
