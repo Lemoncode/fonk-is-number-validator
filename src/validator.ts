@@ -2,15 +2,36 @@ import { FieldValidationFunctionSync } from '@lemoncode/fonk';
 
 const VALIDATOR_TYPE = 'IS_NUMBER';
 
+interface CustomValidatorArgs {
+  strictTypes: boolean;
+}
+
+let defaultCustomArgs: CustomValidatorArgs = {
+  strictTypes: false,
+};
+export const setCustomArgs = (customArgs: CustomValidatorArgs) =>
+  (defaultCustomArgs = customArgs);
+
 let defaultMessage = 'Must be a number';
 export const setErrorMessage = message => (defaultMessage = message);
 
 const isDefined = value => value !== void 0 && value !== null && value !== '';
 
-export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
-  const { value, message = defaultMessage } = fieldValidatorArgs;
+const validateType = (value, args: CustomValidatorArgs) =>
+  !args.strictTypes || typeof value === 'number';
 
-  const succeeded = !isDefined(value) || typeof value === 'number';
+const validate = value => !isNaN(Number(value));
+
+export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
+  const {
+    value,
+    message = defaultMessage,
+    customArgs = defaultCustomArgs,
+  } = fieldValidatorArgs;
+
+  const succeeded =
+    !isDefined(value) ||
+    (validateType(value, customArgs as CustomValidatorArgs) && validate(value));
 
   return {
     succeeded,
