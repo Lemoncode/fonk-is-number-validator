@@ -25,7 +25,9 @@ We can add a isNumber validation to the myFormValues
 import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema = {
-  price: [isNumber.validator],
+  field: {
+    price: [isNumber.validator],
+  },
 };
 ```
 
@@ -37,7 +39,11 @@ You can specify the custom arguments in two ways:
 import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema = {
-  price: [{ validator: isNumber.validator, customArgs: { strictTypes: true } }],
+  field: {
+    price: [
+      { validator: isNumber.validator, customArgs: { strictTypes: true } },
+    ],
+  },
 };
 ```
 
@@ -65,12 +71,14 @@ isNumber.setErrorMessage('El campo debe de ser numérico');
 import { isNumber } from '@lemoncode/fonk-is-number-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: isNumber.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: isNumber.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 
