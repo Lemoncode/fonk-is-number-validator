@@ -22,7 +22,9 @@ const validateType = (value, args: CustomValidatorArgs) =>
 
 const validate = value => !isNaN(Number(value));
 
-export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
+export const validator: FieldValidationFunctionSync<
+  CustomValidatorArgs
+> = fieldValidatorArgs => {
   const {
     value,
     message = defaultMessage,
@@ -30,8 +32,7 @@ export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
   } = fieldValidatorArgs;
 
   const succeeded =
-    !isDefined(value) ||
-    (validateType(value, customArgs as CustomValidatorArgs) && validate(value));
+    !isDefined(value) || (validateType(value, customArgs) && validate(value));
 
   return {
     succeeded,
